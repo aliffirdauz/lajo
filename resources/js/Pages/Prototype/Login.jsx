@@ -45,9 +45,11 @@ export default function Login() {
                             </div>
                             <div className="grid space-y-[14px] mt-[30px]">
                                 <Button type="button" variant="primary">
-                                    <span className="text-base font-semibold">
-                                        Start Watching
-                                    </span>
+                                    <Link href={route('prototype.dashboard')}>
+                                        <span className="text-base font-semibold">
+                                            Start Watching
+                                        </span>
+                                    </Link>
                                 </Button>
                                 <Button type="button" variant="light-outline">
                                     <Link href={route('prototype.register')}>
