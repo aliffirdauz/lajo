@@ -21,7 +21,7 @@ class MovieTableSeeder extends Seeder
                 'slug'=>'the-shawshank-redemption',
                 'category'=>'Drama',
                 'video_url'=>'https://www.youtube.com/embed/6hB3S9bIaco',
-                'thumbnail'=>'https://i.ytimg.com/vi/6hB3S9bIaco/maxresdefault.jpg',
+                'thumbnail'=>'https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg',
                 'rating'=>9.3,
                 'is_featured'=>1,
             ],
