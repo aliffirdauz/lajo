@@ -36,16 +36,6 @@ class SubscriptionPlanTableSeeder extends Seeder
                     'feature3',
                 ]),
             ],
-            [
-                'name' => 'Ultimate',
-                'price' => 999000,
-                'active_period_in_month' => 12,
-                'features' => json_encode([
-                    'feature1',
-                    'feature2',
-                    'feature3',
-                ]),
-            ],
             
         ];
         SubscriptionPlan::insert($subscriptionPlan);
