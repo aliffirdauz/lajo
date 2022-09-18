@@ -11,7 +11,7 @@ MovieCard.propTypes = {
 export default function MovieCard({slug, name, category, thumbnail}) {
     return (
         <div className="absolute group overflow-hidden mr-[30px]">
-            <img src={thumbnail} alt={name}
+            <img src={`/storage/${thumbnail}`} alt={name}
                 className="object-cover rounded-[30px] h-[340px] w-[250px]" />
             <div
                 className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px]">

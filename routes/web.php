@@ -30,8 +30,8 @@ Route::middleware(['auth', 'role:user'])->prefix('dashboard')->name('user.dashbo
 });
 
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.dashboard.')->group(function () {
+    Route::put('movie/{movie}/restore', [AdminMovieController::class, 'restore'])->name('movie.restore');
     Route::resource('movie', AdminMovieController::class);
-    // Route::get('movie/{movie:id}/edit', [AdminMovieController::class, 'edit'])->name('movie.edit');
 });
 
 Route::prefix('prototype')->name('prototype.')->group(function () {

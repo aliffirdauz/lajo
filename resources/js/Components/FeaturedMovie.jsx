@@ -12,7 +12,7 @@ FeaturedMovie.propTypes = {
 export default function FeaturedMovie({slug, name, category, thumbnail, rating=0}) {
     return (
         <div className="absolute overflow-hidden group mr-[30px]">
-            <img src={thumbnail} alt={name}
+            <img src={`/storage/${thumbnail}`} alt={name}
                 className="object-cover rounded-[30px] w-[520px] h-[340px]" alt="" />
             {/* <!-- rating --> */}
             <div className="rating absolute top-0 left-0">
