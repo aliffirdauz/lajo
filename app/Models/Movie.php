@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Movies extends Model
+class Movie extends Model
 {
     use HasFactory, SoftDeletes;
+
+    // protected $id = 'id';
+    // protected $table = 'movies';
 
     protected $fillable = [
         'name',
@@ -17,7 +20,7 @@ class Movies extends Model
         'video_url',
         'thumbnail',
         'rating',
-        'is_featured',
+        'is_featured'
     ];
 
     
