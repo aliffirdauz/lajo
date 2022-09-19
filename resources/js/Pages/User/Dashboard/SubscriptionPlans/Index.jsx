@@ -3,14 +3,35 @@ import SubscriptionCard from "@/Components/SubscriptionCard"
 import { Inertia } from "@inertiajs/inertia"
 import { Head } from "@inertiajs/inertia-react"
 
-export default function SubscriptionPlan({ auth, subscriptionPlans }) {
+export default function SubscriptionPlan({ auth, subscriptionPlans, env }) {
     const selectSubscription = id => {
-        Inertia.post(route("user.dashboard.subscriptionPlan.userSubscribe", { subscriptionPlan:id }))
-    }
+        Inertia.post(route("user.dashboard.subscriptionPlan.userSubscribe", { subscriptionPlan:id }), 
+        {}, 
+        {only:["userSubscription"], 
+        onSuccess:({props})=>{
+            onSnapMidtrans(props.userSubscription);
+        }});
+    };
 
+    const onSnapMidtrans = userSubscription => {
+        snap.pay(userSubscription.snap_token, {
+            onSuccess: function(result){
+                Inertia.visit(route("user.dashboard.index"))
+              },
+              // Optional
+              onPending: function(result){
+                console.log({result});
+              },
+              // Optional
+              onError: function(result){
+                console.log({result});
+              }
+        })
+    }
     return (
         <Authenticated auth={auth}>
             <Head>
+            <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key={env.MIDTRANS_CLIENTKEY}></script>
                 <title>Payments</title>
             </Head>
             {/* <div className="ml-[300px] px-[50px]"> */}
