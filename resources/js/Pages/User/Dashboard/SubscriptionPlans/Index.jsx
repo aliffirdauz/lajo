@@ -34,7 +34,7 @@ export default function SubscriptionPlan({ auth, subscriptionPlans, env }) {
             <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key={env.MIDTRANS_CLIENTKEY}></script>
                 <title>Payments</title>
             </Head>
-            {/* <div className="ml-[300px] px-[50px]"> */}
+
             <div className="py-20 flex flex-col items-center">
                 <div className="text-black font-semibold text-[26px] mb-3">
                     Pricing for Everyone
